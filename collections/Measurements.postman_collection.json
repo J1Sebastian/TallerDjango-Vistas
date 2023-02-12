@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "9e7dd285-703a-49ed-8af2-73e2fec2d634",
+		"name": "Measurements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Measurement",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 22.0,\r\n    \"unit\": \"C\",\r\n    \"place\": \"Tokyo\",\r\n    \"dateTime\": \"2023-02-11T02:34:14.959Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Measurement",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 22.0,\r\n    \"unit\": \"C\",\r\n    \"place\": \"Tokyo\",\r\n    \"dateTime\": \"2023-02-11T02:34:14.959Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 8,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 22.0,\n            \"unit\": \"C\",\n            \"place\": \"Tokyo\",\n            \"dateTime\": \"2023-02-11T23:21:27.634Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrive Measurements",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Retrive Measurements",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements?id=2",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 1,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 15.0,\n            \"unit\": \"C\",\n            \"place\": \"Bogotá\",\n            \"dateTime\": \"2023-02-11T02:34:14.959Z\"\n        }\n    },\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 2,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 24.0,\n            \"unit\": \"C\",\n            \"place\": \"Melgar\",\n            \"dateTime\": \"2023-02-11T02:34:28.886Z\"\n        }\n    },\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 7,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 22.0,\n            \"unit\": \"C\",\n            \"place\": \"Tokyo\",\n            \"dateTime\": \"2023-02-11T23:12:52.717Z\"\n        }\n    },\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 8,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 22.0,\n            \"unit\": \"C\",\n            \"place\": \"Tokyo\",\n            \"dateTime\": \"2023-02-11T23:21:27.634Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrive Measurement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements?id=2",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Retrive Measurement",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements?id=2",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 2,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 24,\n            \"unit\": \"C\",\n            \"place\": \"Melgar\",\n            \"dateTime\": \"2023-02-11T02:34:28.886Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Measurement",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 20.0,\r\n    \"unit\": \"C\",\r\n    \"place\": \"Cali\",\r\n    \"dateTime\": \"2023-02-11T02:34:14.959Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/7",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Measurement",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 20.0,\r\n    \"unit\": \"C\",\r\n    \"place\": \"Cali\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/7",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 7,\n        \"fields\": {\n            \"variable\": 1,\n            \"value\": 20,\n            \"unit\": \"C\",\n            \"place\": \"Cali\",\n            \"dateTime\": \"2023-02-11T23:24:09.355Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Measurement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/7",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://127.0.0.1",
+			"type": "default"
+		},
+		{
+			"key": "port",
+			"value": "8000",
+			"type": "default"
+		},
+		{
+			"key": "api_path",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
