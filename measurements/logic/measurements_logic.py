@@ -1,3 +1,4 @@
+from variables.models import Variable
 from .. models import Measurement
 
 def get_measurements():
@@ -10,12 +11,14 @@ def get_measurement(measurement_pk):
 
 def update_measurement(measurement_pk, new_measurement):
     measurement = get_measurement(measurement_pk)
-    measurement.name = new_measurement["name"]
+    measurement = create_measurement(new_measurement)
+    measurement.pk = measurement_pk
     measurement.save()
     return measurement
 
 def create_measurement(measurement):
-    measurement = Measurement(name=measurement["name"])
+    varibles_pk = Variable.objects.get(pk=measurement["variable"])
+    measurement = Measurement(variable=varibles_pk, value=measurement["value"], unit=measurement["unit"], place=measurement["place"], dateTime=measurement["dateTime"])
     measurement.save()
     return measurement
 
